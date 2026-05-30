@@ -1,0 +1,224 @@
+:root {
+  --text: #1a1a1a;
+  --muted: #6b6b6b;
+  --accent: #8b1a1a;
+  --bg: #ffffff;
+  --rule: #e5e5e5;
+  --max-width: 760px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  font-size: 17px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-feature-settings: "ss01", "ss02";
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.55;
+  letter-spacing: -0.005em;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* ---------- header / nav ---------- */
+header.site-header {
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+}
+
+nav.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+}
+
+nav.site-nav .brand {
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-right: auto;
+  color: var(--text);
+  text-decoration: none;
+}
+
+nav.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+nav.site-nav a:hover,
+nav.site-nav a.active {
+  color: var(--accent);
+}
+
+/* ---------- typography ---------- */
+h1, h2, h3 {
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  font-size: 2.4rem;
+  margin: 0 0 0.25rem;
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  margin: 2.75rem 0 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule);
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1rem;
+  margin: 1.5rem 0 0.4rem;
+}
+
+p { margin: 0 0 1rem; }
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+a:hover { border-bottom-color: var(--accent); }
+
+/* ---------- hero (homepage) ---------- */
+.hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.hero-photo {
+  flex: 0 0 160px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: #efece7;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-text { flex: 1; min-width: 0; }
+
+.hero-text .tagline {
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 0.25rem;
+}
+
+/* ---------- icon links row ---------- */
+.icon-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
+  letter-spacing: -0.005em;
+}
+
+.icon-links a {
+  color: var(--muted);
+}
+
+.icon-links a:hover { color: var(--accent); }
+
+/* ---------- publication entries ---------- */
+.pub {
+  margin-bottom: 1.1rem;
+  text-indent: -1.5rem;
+  padding-left: 1.5rem;
+}
+
+.pub .me { font-weight: 600; }
+
+.pub .venue { font-style: italic; }
+
+.pub-year {
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+/* ---------- teaching / award lists ---------- */
+.entry {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+  align-items: baseline;
+}
+
+.entry-main { flex: 1; }
+
+.entry-main .title { font-weight: 600; }
+
+.entry-main .sub {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.entry .when {
+  color: var(--muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- footer ---------- */
+footer {
+  margin-top: 4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 600px) {
+  html { font-size: 16px; }
+  .hero { flex-direction: column; align-items: center; text-align: center; }
+  .hero-photo { flex-basis: 140px; width: 140px; height: 140px; }
+  .icon-links { justify-content: center; }
+  .entry { flex-direction: column; gap: 0.25rem; }
+  .entry .when { font-size: 0.8rem; }
+}
